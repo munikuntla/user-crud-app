@@ -34,18 +34,22 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webflux</artifactId>
+			<artifactId>spring-boot-starter-data-r2dbc</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+    		<groupId>io.r2dbc</groupId>
+    		<artifactId>r2dbc-h2</artifactId>
+    		<scope>runtime</scope>
+  		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -91,6 +95,7 @@
                 <directory>src/main/resources</directory>
                 <includes>
                     <include>**/*.xml</include>
+					<include>**/*.sql</include>
                 </includes>
             </resource>
         </resources>
@@ -142,11 +147,11 @@
                                 <useOptional>false</useOptional>
                                 <dateLibrary>java8</dateLibrary>
                                 <java8>true</java8>
-                                <skipDefaultInterface>true</skipDefaultInterface>
+                                <skipDefaultInterface>false</skipDefaultInterface>
                                 <useResponseEntity>true</useResponseEntity>
-                                <packageName>com.saapsa.crudapp.userservice.api</packageName>
-                                <apiPackage>com.saapsa.crudapp.userservice.api</apiPackage>
-                                <modelPackage>com.saapsa.crudapp.userservice.model</modelPackage>
+                                <packageName>com.saapsa.crudapp.api</packageName>
+                                <apiPackage>com.saapsa.crudapp.api</apiPackage>
+                                <modelPackage>com.saapsa.crudapp.api.model</modelPackage>
                             </configOptions>
                         </configuration>
                     </execution>
