@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 import com.saapsa.crudapp.api.model.UserRequest;
 
@@ -19,6 +20,7 @@ import jakarta.validation.constraints.Size;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Table("users")
 public class User {
     @Id
     private Long id;
